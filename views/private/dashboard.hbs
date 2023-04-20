@@ -1,0 +1,15 @@
+<h1>Dashboard</h1>
+
+<div id="welcome">
+    <h3>Welcome, {{username}}</h3>
+    <a href="/auth/logout">Log Out</a>
+</div>
+<h4>Your Posts</h4>
+<div id="posts">
+    {{#each post}}
+    <h3>{{this.title}}</h3>
+    <p>{{this.content}}</p>
+    {{/each}}
+</div>
+
+<a href="/newpost">Make a post</a>

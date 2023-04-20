@@ -1,0 +1,54 @@
+
+
+header {
+    background-color:aliceblue;
+    color:darkslategray;
+    padding: 1%;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 70%;
+  }
+  
+  header nav a {
+    text-decoration: none;
+  }
+ 
+  header nav a:hover {
+    text-decoration: underline;
+  }
+
+  header div {
+    background-color:darkslategray;
+    color:aliceblue;
+    padding: .5%;
+    width: 30%;
+    border-radius: 20px;
+  }
+
+  #subheader {
+    text-align: center;
+  }
+
+  #welcome {
+    
+  }
+
+  #post {
+    margin: 0 5%;
+    padding: 2%;
+    margin-top: 2%;
+    border: 5px, solid, rgb(255, 255, 255);
+    border-radius: 20px;
+    background: rgb(166, 166, 166);
+    
+    text-align: center;
+  }
+
+  #postheader {
+    color:aliceblue;
+    padding: 2%;
+    background-color:darkslategray;
+  }

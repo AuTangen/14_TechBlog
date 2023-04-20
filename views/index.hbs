@@ -1,0 +1,22 @@
+<section id="subheader">
+    <h1>TechBlog</h1>
+
+    <h4>Welcome to the TechBlog</h4>
+    <p>Log in or sign up to join the conversation!</p>
+    <div id="sublogin">
+        <a href="/login">Login</a>
+        <span>OR</span>
+        <a href="/register">Register</a>
+    </div>
+</section>
+{{!-- loop over and render Posts --}}
+<section id="posts">
+    {{#each post}}
+    <div id="post">
+        <div id="postheader">
+            <h3>{{this.title}}</h3>
+        </div>
+        <p>{{this.content}}</p>
+    </div>
+    {{/each}}
+</section>
