@@ -33,7 +33,7 @@ header {
   }
 
   #welcome {
-    
+    margin-left: 5%;
   }
 
   #post {
@@ -51,4 +51,32 @@ header {
     color:aliceblue;
     padding: 2%;
     background-color:darkslategray;
+  }
+
+  #postsdash {
+    width: 50%;
+    margin: 0 5%;
+    padding: 2%;
+    margin-top: 2%;
+    border: 5px, solid, rgb(255, 255, 255);
+    border-radius: 20px;
+    background: rgb(166, 166, 166);
+    
+    text-align: center;
+  }
+
+  #yourposts {
+    padding-left: 5%;
+    padding-right: 5%;
+    border: solid darkslategray 2px;
+    width:fit-content;
+    margin-left: 25%;
+  }
+
+  #newpost {
+    color:aliceblue;
+    padding: .5%;
+    border-radius: 10px;
+    background-color:darkslategray;
+    margin-left: 30%;
   }

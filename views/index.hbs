@@ -17,6 +17,12 @@
             <h3>{{this.title}}</h3>
         </div>
         <p>{{this.content}}</p>
+        <form action="/post/:{{this.id}}" method="POST">
+  <input name="content" type="text" placeholder="">
+  
+  <button>Add a comment</button>
+</form>
     </div>
+    
     {{/each}}
 </section>
