@@ -2,6 +2,9 @@ const { Model, DataTypes } = require('sequelize')
 const db = require('../db/connection')
 const Comment = require('./Comment')
 const User = require('./User')
+
+
+
 class Post extends Model { }
 
 Post.init({
@@ -25,6 +28,12 @@ Post.init({
     modelName: 'post'
 })
 
-// Post.hasMany(Comment)
+Post.associate = (models) => {
+    Post.belongsTo(models.User, {
+      foreignKey: "user_id",
+    });
+}
+
+Post.belongsTo(User)
 
 module.exports = Post;

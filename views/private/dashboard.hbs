@@ -3,6 +3,7 @@
 <div id="welcome">
     <h1>Dashboard</h1>
     <h3>Welcome, {{username}}</h3>
+    
     <a href="/auth/logout">Log Out</a>
 </div>
 <h4 id="yourposts">Your Posts</h4>
@@ -15,11 +16,7 @@
         </div>
         <p>{{this.content}}</p>
     </div>
-    <form action="/post/:{{this.id}}" method="POST">
-  <input name="content" type="text" placeholder="">
-  
-  <button>Add a comment</button>
-</form>
+ 
     {{/each}}
 </section>
 

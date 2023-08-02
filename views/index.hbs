@@ -2,27 +2,23 @@
     <h1>TechBlog</h1>
 
     <h4>Welcome to the TechBlog</h4>
-    <p>Log in or sign up to join the conversation!</p>
-    <div id="sublogin">
-        <a href="/login">Login</a>
-        <span>OR</span>
-        <a href="/register">Register</a>
-    </div>
-</section>
-{{!-- loop over and render Posts --}}
-<section id="posts">
-    {{#each post}}
-    <div id="post">
-        <div id="postheader">
-            <h3>{{this.title}}</h3>
+
+
+    {{!-- loop over and render Posts --}}
+    <section id="posts">
+        {{#each post}}
+        <div id="post">
+            <div id="postheader"><a class="postlink" href="/post/{{this.id}}">
+                    <h3>{{this.title}}</h3>
+                    <h5>posted by: {{this.user.username}}</h5>
+                    <p>{{this.content}}</p>
+                </a>
+            </div>
+         
+           
+         
+            
         </div>
-        <p>{{this.content}}</p>
-        <form action="/post/:{{this.id}}" method="POST">
-  <input name="content" type="text" placeholder="">
-  
-  <button>Add a comment</button>
-</form>
-    </div>
-    
-    {{/each}}
-</section>
+
+        {{/each}}
+    </section>
