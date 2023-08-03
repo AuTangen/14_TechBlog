@@ -6,13 +6,31 @@
         </div>
         <p>{{post.content}}</p>
         <div id="postfooter">
-            <h5>posted on: {{post.createdAt}}</h5>
-            <h5>updated on: {{post.updatedAt}}</h5>
+            <h6>posted on: {{post.createdAt}}</h6>
+            
+            </div>
+            <div class="comments">
+                
+                <h5>Comments:</h5>
+                {{#unless comments}}
+                <p>no comments yet</p>
+                {{/unless}}
+                
+                {{#if comments}}
+                 {{#each comments}}
+                 <div class="comment">
+                 <p>{{this.user.username}}</p>
+                <p>{{this.content}}</p>
+                </div>
+                {{/each}}
+                
+                {{/if}}
+            </div>
             {{#unless user}}
             <p>sign in to leave a comment</p>
             {{/unless}}
 {{#if user}}
-               <form action="/post/:{{post.id}}" method="POST">
+               <form id="addcomment" action="/post/{{post.id}}" method="POST">
                 <input name="content" type="text" placeholder="">
 
                 <button>Add a comment</button>

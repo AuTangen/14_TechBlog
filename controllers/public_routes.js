@@ -29,14 +29,21 @@ console.log(post)
 router.get("/post/:id", async (req, res) => {
   const user = await User.findByPk(req.session.user_id)
   const post = await Post.findByPk(req.params.id, {
-    include: User,
+    include: [User, Comment]
   });
 
   console.log(post)
+const plaintrue = post.get({ plain: true })
+const comments = plaintrue.comments
+
+
+  console.log("COMMENTS " + comments[0])
+  // console.log("USER " + plaintrue.user.username)
 
   res.render("post", {
     post: post.get({ plain: true }),
-    user: user
+    user: user,
+    comments: comments
   });
 });
 //  to log in / register

@@ -1,21 +1,25 @@
 
 
-<div id="welcome">
+<div class="subheader">
     <h1>Dashboard</h1>
-    <h3>Welcome, {{username}}</h3>
+    <h4>Welcome, {{username}}</h3>
     
-    <a href="/auth/logout">Log Out</a>
+   
 </div>
 <h4 id="yourposts">Your Posts</h4>
-<a id="newpost" href="/newpost">New Post</a>
+<div id="newpost">
+<a  href="/newpost">
+<h5>New Post</h5>
+</a>
+</div>
 <section id="postsdash">
     {{#each post}}
-    <div id="post">
+    <div id="post"><a class="postlink" href="/post/{{this.id}}">
         <div id="postheader">
             <h3>{{this.title}}</h3>
         </div>
         <p>{{this.content}}</p>
-    </div>
+    </a></div>
  
     {{/each}}
 </section>

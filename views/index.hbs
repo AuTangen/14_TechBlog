@@ -1,24 +1,31 @@
-<section id="subheader">
+<section class="subheader">
     <h1>TechBlog</h1>
 
     <h4>Welcome to the TechBlog</h4>
 
-
+</section>
     {{!-- loop over and render Posts --}}
     <section id="posts">
         {{#each post}}
-        <div id="post">
-            <div id="postheader"><a class="postlink" href="/post/{{this.id}}">
+        <div id="post"><a class="postlink" href="/post/{{this.id}}">
+            <div id="postheader">
                     <h3>{{this.title}}</h3>
                     <h5>posted by: {{this.user.username}}</h5>
-                    <p>{{this.content}}</p>
-                </a>
+                   
+                
             </div>
-         
+          <p>{{this.content}}</p>
            
          
             
-        </div>
+        </a></div>
 
         {{/each}}
+{{#if user}}
+        <div id="newpost">
+<a  href="/newpost">
+<h5>New Post</h5>
+</a>
+</div>
+{{/if}}
     </section>

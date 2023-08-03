@@ -55,25 +55,23 @@ router.post("/newpost", isAuthenticated, async (req, res) => {
 });
 
 router.post("/post/:id", isAuthenticated, async (req, res) => {
+ 
   const post = await Post.findByPk(req.params.id, {
     include: User,
   });
-  console.log(post)
+  
 
   const { content } = req.body;
-  const user_id = req.session.user_id;
+  const userId = req.session.user_id;
+  const postId = post.id
 
-
-  const comment = await Comment.create({content, user_id });
+  const comment = await Comment.create({content, user_id: userId, post_id: postId });
 
 
     console.log(comment)
-  
-   res.redirect('/post/:id',
-    {
-    
-    comment: comment
-  })
+    console.log("POST " + post)
+    console.log("comment added!")
+   res.redirect(`/post/${postId}`);
 
 
 });

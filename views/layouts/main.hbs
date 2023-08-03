@@ -48,22 +48,22 @@
       crossorigin="anonymous"
     />
     
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
 
   <body>
-    <nav class="navbar text-white">
+    <nav>
       
       <h1 id="title"><a id="title" href="/">The Tech Blog</a></h1>
       
     
   
-  </div>
+  
       {{#unless user}}
       <div>
         <a href="/login">Login</a>
         <span>OR</span>
-        <ahref="/signup">Sign Up</a>
+        <a href="/register">Sign Up</a>
       </div>
       {{/unless}}
       {{#if user}}
